@@ -31,6 +31,7 @@ public:
 	bool get_Contacto_estrecho() { return Contacto_Estrecho; };
 	bool get_Dolor_Cabeza() { return Dolor_Cabeza; };
 	bool get_Dolor_Garganta() { return Dolor_Garganta; };
+	//enum get_Resultado_Testeo { return Resultado_Testeo; };
 
 };
 

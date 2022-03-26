@@ -5,12 +5,12 @@ cCentro_de_Testeo::cCentro_de_Testeo() {
 	this->Comuna = "";
 	this->Nombre = "";
 	this->completo = 0;
-	this->Array_Pacientes = new cPaciente * [2];
-	for (int i = 0; i < 2; i++)
+	this->Array_Pacientes = new cPaciente * [MAX_PACIENTES];
+	for (int i = 0; i < MAX_PACIENTES; i++)
 	{
 		Array_Pacientes[i] = NULL;
 	}
-
+	Laboratorio = NULL;
 }
 
 cCentro_de_Testeo::cCentro_de_Testeo(string _ID, string _Comuna, string _Nombre) {
@@ -18,11 +18,12 @@ cCentro_de_Testeo::cCentro_de_Testeo(string _ID, string _Comuna, string _Nombre)
 	this->Comuna = _Comuna;
 	this->Nombre = _Nombre;
 	this->completo = 0;
-	this->Array_Pacientes = new cPaciente * [2];
-	for (int i = 0; i < 2; i++)
+	this->Array_Pacientes = new cPaciente * [MAX_PACIENTES];
+	for (int i = 0; i < MAX_PACIENTES; i++)
 	{
 		Array_Pacientes[i] = NULL;
 	}
+	Laboratorio = NULL;
 }
 
 cCentro_de_Testeo::~cCentro_de_Testeo() {
@@ -33,15 +34,17 @@ cCentro_de_Testeo::~cCentro_de_Testeo() {
 			}
 		delete[] Array_Pacientes;
 	}
+
+	delete Laboratorio;
 }
 
 void cCentro_de_Testeo::Asociar_Laboratorio(cLaboratorio* _Laboratorio){
-
+	this->Laboratorio = _Laboratorio;
 }
 
 bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
 
-	if (completo == 2) { cout << "Centro de testeo alcanzo su maximo de capacidad" << endl; return false; }
+	if (completo == 2) { cout << "ERROR: Centro de testeo alcanzo su maximo de capacidad." << endl; return false; }
 	int pos = getIndex(_Paciente->get_DNI());
 	if (pos >= 0) {
 		cout << "Error" << endl;
@@ -52,10 +55,10 @@ bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
 
 void cCentro_de_Testeo::Baja_Paciente() {
 	/*
-	* implementar get del enum de pacientes papa poder dar de baja los 
+	* implementar get del enum de pacientes para poder darlos de baja 
 	* 
 	for (int i = 0; i < completo; i++) {
-		if (Array_Pacientes[i]-> -----get_destino() == direccion ---------) {
+		if (Array_Pacientes[i]-> -----get_Resultado_Testeo() != SinResultado ---------) {
 
 			for (int p = i; p < completo - 1; p++) {
 				Array_Pacientes[i] = Array_Pacientes[i + 1];

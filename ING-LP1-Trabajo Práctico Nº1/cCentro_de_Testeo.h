@@ -3,6 +3,7 @@
 #include<iostream>
 #include "cLaboratorio.h"
 #include "cPaciente.h"
+#define MAX_PACIENTES 2
 using namespace std;
 class cCentro_de_Testeo
 {
@@ -11,6 +12,7 @@ protected:
 	string Comuna;
 	string Nombre;
 	cPaciente** Array_Pacientes;
+	cLaboratorio* Laboratorio;
 	int completo;
 
 public:
