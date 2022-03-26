@@ -5,6 +5,7 @@ cLaboratorio::cLaboratorio(){
 	Nombre = "";
 	Comuna = "";
 	Completo = false;
+	//cPaciente* Paciente= NULL;
 }
 
 cLaboratorio::cLaboratorio(string _ID_Laboratorio, string _Nombre, string _Comuna, bool _Completo) {
@@ -12,6 +13,7 @@ cLaboratorio::cLaboratorio(string _ID_Laboratorio, string _Nombre, string _Comun
 	this->Nombre = _Nombre;
 	this->Comuna = _Comuna;
 	this->Completo = _Completo;
+	//cPaciente* Paciente= NULL;
 }
 
 cLaboratorio::~cLaboratorio(){
