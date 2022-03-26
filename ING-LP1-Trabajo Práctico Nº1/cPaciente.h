@@ -21,6 +21,9 @@ public:
 	cPaciente();
 	cPaciente(string Nombre, string Apellido, string DNI, string Telefono, bool Fiebre, bool Tos, bool Mocos, bool Contacto_Estrecho, bool Dolor_Cabeza, bool Dolor_Garganta);
 	~cPaciente();
+
+	//Gets y Sets
+
 	string get_DNI() { return DNI; };
 	bool get_Fiebre() { return Fiebre; };
 	bool get_Tos() { return Tos; };

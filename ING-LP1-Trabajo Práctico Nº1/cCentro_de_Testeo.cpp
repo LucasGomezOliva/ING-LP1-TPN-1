@@ -5,7 +5,7 @@ cCentro_de_Testeo::cCentro_de_Testeo() {
 	this->Comuna = "";
 	this->Nombre = "";
 	this->completo = 0;
-	this->Array_Pacientes = new cPaciente * [3];
+	this->Array_Pacientes = new cPaciente * [2];
 	for (int i = 0; i < 2; i++)
 	{
 		Array_Pacientes[i] = NULL;
