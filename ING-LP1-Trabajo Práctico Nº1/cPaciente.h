@@ -2,6 +2,7 @@
 #include<string>
 #include<iostream>
 using namespace std;
+
 class cPaciente
 {
 protected:
@@ -16,6 +17,7 @@ protected:
 	bool Dolor_Cabeza;
 	bool Dolor_Garganta;
 	enum Resultado_Testeo { SinResultado, Positivo, Negativo };
+	Resultado_Testeo Testeo;
 
 public:
 	cPaciente();
@@ -23,7 +25,6 @@ public:
 	~cPaciente();
 
 	//Gets y Sets
-
 	string get_DNI() { return DNI; };
 	bool get_Fiebre() { return Fiebre; };
 	bool get_Tos() { return Tos; };
@@ -31,7 +32,9 @@ public:
 	bool get_Contacto_estrecho() { return Contacto_Estrecho; };
 	bool get_Dolor_Cabeza() { return Dolor_Cabeza; };
 	bool get_Dolor_Garganta() { return Dolor_Garganta; };
-	//enum get_Resultado_Testeo { return Resultado_Testeo; };
+	Resultado_Testeo get_Resultado_Testeo() { return Testeo; };
+
+	void set_Resultado_Testeo(int a);
 
 };
 

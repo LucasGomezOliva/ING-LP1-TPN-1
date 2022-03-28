@@ -7,6 +7,7 @@
 #include "cCentro_de_Testeo.h"
 #include <string>
 
+
 int main()
 {
     cCentro_de_Testeo* Centro_de_Testeo_1 = new cCentro_de_Testeo("0001", "Comuna 1", "Centro 1");
@@ -19,9 +20,11 @@ int main()
     cPaciente* Paciente_2 = new cPaciente("Pepe2", "Apellido2", "0002", "123455677", false, false, true, true, true, false);
     cPaciente* Paciente_3 = new cPaciente("Pepe3", "Apellido3", "0003", "123455677", false, false, true, true, true, false);
 
-    Centro_de_Testeo_1->Alta_Paciente(Paciente_1);
     Centro_de_Testeo_1->Alta_Paciente(Paciente_2);
+    Centro_de_Testeo_1->Alta_Paciente(Paciente_1);
     Centro_de_Testeo_1->Alta_Paciente(Paciente_3);
+
+    Centro_de_Testeo_1->Baja_Paciente();
     Centro_de_Testeo_1->Asociar_Laboratorio(Laboratorio_1);
 
 

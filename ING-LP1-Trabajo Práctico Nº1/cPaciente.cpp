@@ -11,6 +11,7 @@ cPaciente::cPaciente() {
 	this->Contacto_Estrecho = false;
 	this->Dolor_Cabeza = false;
 	this->Dolor_Garganta = false;
+	this->Testeo = Negativo;
 }
 
 cPaciente::cPaciente(string _Nombre, string _Apellido, string _DNI, string _Telefono, bool _Fiebre, bool _Tos, bool _Mocos, bool _Contacto_Estrecho, bool _Dolor_Cabeza, bool _Dolor_Garganta) {
@@ -24,7 +25,20 @@ cPaciente::cPaciente(string _Nombre, string _Apellido, string _DNI, string _Tele
 	this->Contacto_Estrecho = _Contacto_Estrecho;
 	this->Dolor_Cabeza = _Dolor_Cabeza;
 	this->Dolor_Garganta = _Dolor_Garganta;
+	this->Testeo = Negativo;
 }
 
 cPaciente::~cPaciente(){
+}
+
+void cPaciente::set_Resultado_Testeo(int a)
+{
+	if (a == 1) {
+		Testeo = Negativo;
+	}
+
+	else
+	{
+		Testeo = Positivo;
+	}
 }

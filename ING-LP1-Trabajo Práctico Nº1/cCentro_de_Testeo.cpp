@@ -39,26 +39,35 @@ cCentro_de_Testeo::~cCentro_de_Testeo() {
 }
 
 void cCentro_de_Testeo::Asociar_Laboratorio(cLaboratorio* _Laboratorio){
+	//Recibe el laboratorio al cual se va a ver asociado el centro de testeo.
 	this->Laboratorio = _Laboratorio;
 }
 
 bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
 
+	//Recibe un paciente, verifica que haya un espacio para atenderlo y si lo hay se lo asigna a uno de los 2 punteros. Caso contrario, se imprime en pantalla el error que se tuvo.
+
 	if (completo == 2) { cout << "ERROR: Centro de testeo alcanzo su maximo de capacidad." << endl; return false; }
 	int pos = getIndex(_Paciente->get_DNI());
 	if (pos >= 0) {
-		cout << "Error" << endl;
+		cout << "ERROR: El paciente ya habia sido dado de alta." << endl;
 		return false;
 	}
 	this->Array_Pacientes[completo++] = _Paciente;
 }
 
+void cCentro_de_Testeo::Mandar_Testeo() {
+
+	//Envía las muestras al Laboratorio asignado para determinar la presencia de COVID en el paciente.
+
+}
+
 void cCentro_de_Testeo::Baja_Paciente() {
-	/*
-	* implementar get del enum de pacientes para poder darlos de baja 
-	* 
+
+	//Si el atributo “Resultado Testeo” de los pacientes es diferente a “Sin resultado”, se pueden poner en NULL los punteros a los pacientes.
+	
 	for (int i = 0; i < completo; i++) {
-		if (Array_Pacientes[i]-> -----get_Resultado_Testeo() != SinResultado ---------) {
+		if (Array_Pacientes[i]->get_Resultado_Testeo() != 0) {
 
 			for (int p = i; p < completo - 1; p++) {
 				Array_Pacientes[i] = Array_Pacientes[i + 1];
@@ -66,8 +75,7 @@ void cCentro_de_Testeo::Baja_Paciente() {
 			Array_Pacientes[--completo] = NULL;
 		}
 	}
-	*/
-	
+
 }
 
 int cCentro_de_Testeo::getIndex(string _DNI) {

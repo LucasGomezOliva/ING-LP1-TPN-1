@@ -19,13 +19,10 @@ public:
 	cCentro_de_Testeo();
 	cCentro_de_Testeo(string _ID, string _Comuna, string _Nombre);
 	~cCentro_de_Testeo();
-
-	//Metodos
 	void Asociar_Laboratorio(cLaboratorio* _Laboratorio);
 	bool Alta_Paciente(cPaciente* _Paciente);
 	void Mandar_Testeo();
 	void Baja_Paciente();
-
 	int getIndex(string _DNI);
 };
 
