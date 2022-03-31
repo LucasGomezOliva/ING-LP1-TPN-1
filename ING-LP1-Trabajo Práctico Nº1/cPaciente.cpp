@@ -12,9 +12,10 @@ cPaciente::cPaciente() {
 	this->Dolor_Cabeza = false;
 	this->Dolor_Garganta = false;
 	this->Testeo = Negativo;
+	this->Notificado = false;
 }
 
-cPaciente::cPaciente(string _Nombre, string _Apellido, string _DNI, string _Telefono, bool _Fiebre, bool _Tos, bool _Mocos, bool _Contacto_Estrecho, bool _Dolor_Cabeza, bool _Dolor_Garganta) {
+cPaciente::cPaciente(string _Nombre, string _Apellido, string _DNI, string _Telefono, bool _Fiebre, bool _Tos, bool _Mocos, bool _Contacto_Estrecho, bool _Dolor_Cabeza, bool _Dolor_Garganta, bool _Notificado) {
 	this->Nombre = _Nombre;
 	this->Apellido = _Apellido;
 	this->DNI = _DNI;
@@ -26,6 +27,7 @@ cPaciente::cPaciente(string _Nombre, string _Apellido, string _DNI, string _Tele
 	this->Dolor_Cabeza = _Dolor_Cabeza;
 	this->Dolor_Garganta = _Dolor_Garganta;
 	this->Testeo = Negativo;
+	this->Notificado = _Notificado;
 }
 
 cPaciente::~cPaciente(){

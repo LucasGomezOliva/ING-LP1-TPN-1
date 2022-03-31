@@ -83,6 +83,13 @@ void cLaboratorio::Analisis_Muestra() {
 
 void cLaboratorio::Avisar_Pacientes() {
 	// Manda un mensaje de texto al paciente con la información del testeo (imprimir en pantalla si se logró mandar el mensaje). Una vez que se avisa a los pacientes, se descartan las muestras.
+	for (int i = 0; i < Completo; i++) {
+		if (Array_Pacientes != 0) {
+			Array_Pacientes[i]->set_Notificado(true);
+			cout << "El resultado fue enviado" << endl;
+		}
+	}
+
 }
 
 

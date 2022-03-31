@@ -16,9 +16,9 @@ int main()
     cLaboratorio* Laboratorio_1 = new cLaboratorio();
     cLaboratorio* Laboratorio_2 = new cLaboratorio();
 
-    cPaciente* Paciente_1 = new cPaciente("Pepe1", "Apellido1", "0001", "123455677", false, false, true, true, true, false);
-    cPaciente* Paciente_2 = new cPaciente("Pepe2", "Apellido2", "0002", "123455677", false, false, true, true, true, false);
-    cPaciente* Paciente_3 = new cPaciente("Pepe3", "Apellido3", "0003", "123455677", false, false, true, true, true, false);
+    cPaciente* Paciente_1 = new cPaciente("Pepe1", "Apellido1", "0001", "123455677", false, false, true, true, true, false, false);
+    cPaciente* Paciente_2 = new cPaciente("Pepe2", "Apellido2", "0002", "123455677", false, false, true, true, true, false, false);
+    cPaciente* Paciente_3 = new cPaciente("Pepe3", "Apellido3", "0003", "123455677", false, false, true, true, true, false, false);
 
     Centro_de_Testeo_1->Alta_Paciente(Paciente_2);
     Centro_de_Testeo_1->Alta_Paciente(Paciente_1);

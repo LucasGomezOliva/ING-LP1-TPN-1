@@ -18,10 +18,11 @@ protected:
 	bool Dolor_Garganta;
 	enum Resultado_Testeo { SinResultado, Positivo, Negativo };
 	Resultado_Testeo Testeo;
+	bool Notificado;
 
 public:
 	cPaciente();
-	cPaciente(string Nombre, string Apellido, string DNI, string Telefono, bool Fiebre, bool Tos, bool Mocos, bool Contacto_Estrecho, bool Dolor_Cabeza, bool Dolor_Garganta);
+	cPaciente(string Nombre, string Apellido, string DNI, string Telefono, bool Fiebre, bool Tos, bool Mocos, bool Contacto_Estrecho, bool Dolor_Cabeza, bool Dolor_Garganta, bool Notificado);
 	~cPaciente();
 
 	//Gets y Sets
@@ -35,6 +36,6 @@ public:
 	Resultado_Testeo get_Resultado_Testeo() { return Testeo; };
 
 	void set_Resultado_Testeo(int a);
-
+	void set_Notificado(bool notificado) { Notificado = notificado; };
 };
 

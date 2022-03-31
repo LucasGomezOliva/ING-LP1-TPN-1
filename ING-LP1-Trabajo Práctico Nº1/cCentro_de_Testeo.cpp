@@ -59,7 +59,13 @@ bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
 void cCentro_de_Testeo::Mandar_Testeo() {
 
 	//Envía las muestras al Laboratorio asignado para determinar la presencia de COVID en el paciente.
-
+	bool aux;
+	for (int i = 0; i < completo;i++) {
+		if (Array_Pacientes[i] != NULL) {
+			aux = Laboratorio->Recibir_Muestra(Array_Pacientes[i]);
+			if (aux = false) cout << "ERROR al recibir la muestra" << endl;
+		}
+	}
 }
 
 void cCentro_de_Testeo::Baja_Paciente() {
