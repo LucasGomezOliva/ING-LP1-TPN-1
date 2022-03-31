@@ -38,13 +38,16 @@ bool cLaboratorio::Recibir_Muestra(cPaciente* _Paciente) {
 
 	//Recibe un paciente y se fija si tiene lugar para analizar la muestra. En el caso de que no se logre recibir la muestra indique el problema que se tuvo.
 
-	if (Completo == 2) { cout << "ERROR: Laboratorio alcanzo su maximo de capacidad de muestras." << endl; return false; }
+	if (Completo == MAX_MUESTRAS_PACIENTES) { cout << "ERROR: Laboratorio alcanzo su maximo de capacidad de muestras." << endl; return false; }
 	int pos = getIndex(_Paciente->get_DNI());
 	if (pos >= 0) {
 		cout << "ERROR: Ya se habia recibido la muestra" << endl;
 		return false;
 	}
-	this->Array_Pacientes[Completo++] = _Paciente;
+
+	//Duda del correcto uso de punteros
+	//this->Array_Pacientes[Completo++] = _Paciente;
+	this->Array_Pacientes[Completo++] = new cPaciente(*_Paciente);
 }
 
 void cLaboratorio::Analisis_Muestra() {
@@ -68,17 +71,10 @@ void cLaboratorio::Analisis_Muestra() {
 		if (Array_Pacientes[i]->get_Contacto_estrecho() == true) sintomas++;
 		if (Array_Pacientes[i]->get_Dolor_Cabeza() == true) sintomas++;
 		if (Array_Pacientes[i]->get_Dolor_Garganta() == true) sintomas++;
-
-		if (sintomas < 2) {
-			Array_Pacientes[i]->set_Resultado_Testeo(2);
-		}
-		else
-		{
-			Array_Pacientes[i]->set_Resultado_Testeo(1);
-		}
+		if (sintomas < 2) {Array_Pacientes[i]->set_Resultado_Testeo(Negativo);}
+		else {Array_Pacientes[i]->set_Resultado_Testeo(Positivo);}
 		sintomas = 0;
 	}
-	
 }
 
 void cLaboratorio::Avisar_Pacientes() {
@@ -86,10 +82,9 @@ void cLaboratorio::Avisar_Pacientes() {
 	for (int i = 0; i < Completo; i++) {
 		if (Array_Pacientes != 0) {
 			Array_Pacientes[i]->set_Notificado(true);
-			cout << "El resultado fue enviado" << endl;
+			cout << "El resultado fue enviado al paciente:  "<<Array_Pacientes[i]->to_string() << endl;
 		}
 	}
-
 }
 
 
@@ -99,4 +94,8 @@ int cLaboratorio::getIndex(string _DNI) {
 			return i;
 	}
 	return -1;
+}
+
+string cLaboratorio::to_string() {
+	return "ID Laoratorio:" + ID_Laboratorio + "	Nombre:" + Nombre + "	Comuna:" + Comuna;
 }

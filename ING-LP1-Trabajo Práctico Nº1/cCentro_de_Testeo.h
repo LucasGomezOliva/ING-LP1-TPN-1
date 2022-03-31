@@ -3,6 +3,7 @@
 #include<iostream>
 #include "cLaboratorio.h"
 #include "cPaciente.h"
+#include"Resultado_Testeo.h"
 #define MAX_PACIENTES 2
 using namespace std;
 class cCentro_de_Testeo

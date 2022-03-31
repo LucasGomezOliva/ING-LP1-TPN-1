@@ -11,7 +11,7 @@ cPaciente::cPaciente() {
 	this->Contacto_Estrecho = false;
 	this->Dolor_Cabeza = false;
 	this->Dolor_Garganta = false;
-	this->Testeo = Negativo;
+	this->Testeo = SinResultado;
 	this->Notificado = false;
 }
 
@@ -26,21 +26,18 @@ cPaciente::cPaciente(string _Nombre, string _Apellido, string _DNI, string _Tele
 	this->Contacto_Estrecho = _Contacto_Estrecho;
 	this->Dolor_Cabeza = _Dolor_Cabeza;
 	this->Dolor_Garganta = _Dolor_Garganta;
-	this->Testeo = Negativo;
+	this->Testeo = SinResultado;
 	this->Notificado = _Notificado;
 }
 
 cPaciente::~cPaciente(){
 }
 
-void cPaciente::set_Resultado_Testeo(int a)
+void cPaciente::set_Resultado_Testeo(Resultado_Testeo resultado)
 {
-	if (a == 1) {
-		Testeo = Negativo;
-	}
+	Testeo = resultado;
+}
 
-	else
-	{
-		Testeo = Positivo;
-	}
+string cPaciente::to_string() {
+	return "Nombre:" + Nombre + "	Apellido:" + Apellido + "	DNI:" + DNI + "	Telefono:" + Telefono; "	Fiebre: ";
 }

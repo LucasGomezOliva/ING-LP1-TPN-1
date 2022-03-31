@@ -19,7 +19,7 @@ public:
 	bool Recibir_Muestra(cPaciente* _Paciente);
 	void Analisis_Muestra();//Testear el correcto funcionamiento
 	void Avisar_Pacientes();
-
 	int getIndex(string _DNI);
+	string to_string();
 };
 

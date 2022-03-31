@@ -1,6 +1,7 @@
 #pragma once
 #include<string>
 #include<iostream>
+#include"Resultado_Testeo.h"
 using namespace std;
 
 class cPaciente
@@ -16,7 +17,6 @@ protected:
 	bool Contacto_Estrecho;
 	bool Dolor_Cabeza;
 	bool Dolor_Garganta;
-	enum Resultado_Testeo { SinResultado, Positivo, Negativo };
 	Resultado_Testeo Testeo;
 	bool Notificado;
 
@@ -24,8 +24,6 @@ public:
 	cPaciente();
 	cPaciente(string Nombre, string Apellido, string DNI, string Telefono, bool Fiebre, bool Tos, bool Mocos, bool Contacto_Estrecho, bool Dolor_Cabeza, bool Dolor_Garganta, bool Notificado);
 	~cPaciente();
-
-	//Gets y Sets
 	string get_DNI() { return DNI; };
 	bool get_Fiebre() { return Fiebre; };
 	bool get_Tos() { return Tos; };
@@ -34,8 +32,8 @@ public:
 	bool get_Dolor_Cabeza() { return Dolor_Cabeza; };
 	bool get_Dolor_Garganta() { return Dolor_Garganta; };
 	Resultado_Testeo get_Resultado_Testeo() { return Testeo; };
-
-	void set_Resultado_Testeo(int a);
+	void set_Resultado_Testeo(Resultado_Testeo resultado);
 	void set_Notificado(bool notificado) { Notificado = notificado; };
+	string to_string();
 };
 
