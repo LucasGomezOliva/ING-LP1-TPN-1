@@ -11,7 +11,7 @@ cPaciente::cPaciente() {
 	this->Contacto_Estrecho = false;
 	this->Dolor_Cabeza = false;
 	this->Dolor_Garganta = false;
-	this->Testeo = SinResultado;
+	this->Testeo = Resultado_Testeo::SinResultado;
 	this->Notificado = false;
 }
 
@@ -26,7 +26,7 @@ cPaciente::cPaciente(string _Nombre, string _Apellido, string _DNI, string _Tele
 	this->Contacto_Estrecho = _Contacto_Estrecho;
 	this->Dolor_Cabeza = _Dolor_Cabeza;
 	this->Dolor_Garganta = _Dolor_Garganta;
-	this->Testeo = SinResultado;
+	this->Testeo = Resultado_Testeo::SinResultado;
 	this->Notificado = _Notificado;
 }
 

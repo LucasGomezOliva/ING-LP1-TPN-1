@@ -28,6 +28,8 @@ cLaboratorio::~cLaboratorio(){
 	if (Array_Pacientes != NULL) {
 		for (int i = 0; i < Completo; i++) {
 			if (Array_Pacientes[i] != NULL)
+				//delete Array_Pacientes[i];
+				Array_Pacientes[i] = NULL;
 				delete Array_Pacientes[i];
 		}
 		delete[] Array_Pacientes;
@@ -46,8 +48,8 @@ bool cLaboratorio::Recibir_Muestra(cPaciente* _Paciente) {
 	}
 
 	//Duda del correcto uso de punteros
-	//this->Array_Pacientes[Completo++] = _Paciente;
-	this->Array_Pacientes[Completo++] = new cPaciente(*_Paciente);
+	this->Array_Pacientes[Completo++] = _Paciente;
+	//this->Array_Pacientes[Completo++] = new cPaciente(*_Paciente);
 }
 
 void cLaboratorio::Analisis_Muestra() {
@@ -71,8 +73,8 @@ void cLaboratorio::Analisis_Muestra() {
 		if (Array_Pacientes[i]->get_Contacto_estrecho() == true) sintomas++;
 		if (Array_Pacientes[i]->get_Dolor_Cabeza() == true) sintomas++;
 		if (Array_Pacientes[i]->get_Dolor_Garganta() == true) sintomas++;
-		if (sintomas < 2) {Array_Pacientes[i]->set_Resultado_Testeo(Negativo);}
-		else {Array_Pacientes[i]->set_Resultado_Testeo(Positivo);}
+		if (sintomas < 2) {Array_Pacientes[i]->set_Resultado_Testeo(Resultado_Testeo::Negativo);}
+		else {Array_Pacientes[i]->set_Resultado_Testeo(Resultado_Testeo::Positivo);}
 		sintomas = 0;
 	}
 }

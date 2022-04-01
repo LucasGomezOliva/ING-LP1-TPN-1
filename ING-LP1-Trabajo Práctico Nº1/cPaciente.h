@@ -1,7 +1,7 @@
 #pragma once
 #include<string>
 #include<iostream>
-#include"Resultado_Testeo.h"
+#include"cResultado_Testeo.h"
 using namespace std;
 
 class cPaciente
@@ -33,7 +33,7 @@ public:
 	bool get_Dolor_Garganta() { return Dolor_Garganta; };
 	Resultado_Testeo get_Resultado_Testeo() { return Testeo; };
 	void set_Resultado_Testeo(Resultado_Testeo resultado);
-	void set_Notificado(bool notificado) { Notificado = notificado; };
+	void set_Notificado(bool notificado) { this->Notificado = notificado; };
 	string to_string();
 };
 

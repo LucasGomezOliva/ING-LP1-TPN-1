@@ -148,7 +148,7 @@
     <ClInclude Include="cCentro_de_Testeo.h" />
     <ClInclude Include="cLaboratorio.h" />
     <ClInclude Include="cPaciente.h" />
-    <ClInclude Include="Resultado_Testeo.h" />
+    <ClInclude Include="cResultado_Testeo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

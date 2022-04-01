@@ -27,14 +27,12 @@ cCentro_de_Testeo::cCentro_de_Testeo(string _ID, string _Comuna, string _Nombre)
 
 cCentro_de_Testeo::~cCentro_de_Testeo() {
 	if (Array_Pacientes != NULL) {
-			for (int i = 0; i < completo; i++) {
+			for (int i = 0; i <= completo; i++) {
 				if (Array_Pacientes[i] != NULL)
 					delete Array_Pacientes[i];
 			}
 		delete[] Array_Pacientes;
 	}
-
-	delete Laboratorio;
 }
 
 void cCentro_de_Testeo::Asociar_Laboratorio(cLaboratorio* _Laboratorio){
@@ -52,8 +50,8 @@ bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
 		return false;
 	}
 	//Duda del correcto uso de punteros
-	//this->Array_Pacientes[completo++] = _Paciente;
-	this->Array_Pacientes[completo++] = new cPaciente(*_Paciente);
+	this->Array_Pacientes[completo++] = _Paciente;
+	//this->Array_Pacientes[completo++] = new cPaciente(*_Paciente);
 }
 
 void cCentro_de_Testeo::Mandar_Testeo() {
@@ -81,7 +79,7 @@ void cCentro_de_Testeo::Baja_Paciente() {
 	//Si el atributo “Resultado Testeo” de los pacientes es diferente a “Sin resultado”, se pueden poner en NULL los punteros a los pacientes.
 	
 	for (int i = 0; i < completo; i++) {
-		if (Array_Pacientes[i]->get_Resultado_Testeo() != SinResultado) {
+		if (Array_Pacientes[i]->get_Resultado_Testeo() != Resultado_Testeo::SinResultado) {
 
 			for (int p = i; p < completo - 1; p++) {
 				Array_Pacientes[i] = Array_Pacientes[i + 1];

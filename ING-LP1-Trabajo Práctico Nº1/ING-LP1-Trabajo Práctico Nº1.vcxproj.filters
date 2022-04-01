@@ -38,7 +38,7 @@
     <ClInclude Include="cLaboratorio.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Resultado_Testeo.h">
+    <ClInclude Include="cResultado_Testeo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
