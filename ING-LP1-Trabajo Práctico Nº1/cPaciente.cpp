@@ -33,13 +33,12 @@ cPaciente::cPaciente(string _Nombre, string _Apellido, string _DNI, string _Tele
 cPaciente::~cPaciente(){
 }
 
-void cPaciente::set_Resultado_Testeo(Resultado_Testeo resultado)
-{
-	Testeo = resultado;
+void cPaciente::set_Resultado_Testeo(Resultado_Testeo resultado){
+	this->Testeo = resultado;
 }
 
 string cPaciente::to_string() {
-	return "	Nombre:" + Nombre + "	Apellido:" + Apellido + "	DNI:" + DNI + "	Telefono:" + Telefono; "	Fiebre: ";
+	return "\tNombre:" + Nombre + "\tApellido:" + Apellido + "\tDNI:" + DNI + "\tTelefono:" + Telefono; "\tFiebre: ";
 }
 
 void cPaciente::imprimir_en_pantalla() {

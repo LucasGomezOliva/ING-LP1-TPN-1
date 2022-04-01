@@ -26,7 +26,6 @@ cLaboratorio::cLaboratorio(string _ID_Laboratorio, string _Nombre, string _Comun
 
 cLaboratorio::~cLaboratorio(){
 	if (Array_Pacientes != NULL) {
-
 		delete[] Array_Pacientes;
 	}
 }
@@ -45,17 +44,6 @@ bool cLaboratorio::Recibir_Muestra(cPaciente* _Paciente) {
 }
 
 void cLaboratorio::Analisis_Muestra() {
-	/*Determina a partir de los datos descriptivos del paciente si este tiene COVID o no, y cambia el atributo “Resultado testeo” del mismo a su correspondiente resultado.
-		Positivo: Si el paciente presenta más de 2 síntomas
-		Negativo : Si el paciente presenta menos de 2 síntomas
-	Sintomas:
-			Fiebre
-			Tos
-			Mocos
-			Contacto_Estrecho
-			Dolor_Cabeza
-			Dolor_Garganta
-	*/
 	int sintomas = 0;
 	for (int i = 0; i < Completo; i++)
 	{
@@ -92,7 +80,7 @@ int cLaboratorio::getIndex(string _DNI) {
 }
 
 string cLaboratorio::to_string() {
-	return "	ID Laoratorio:" + ID_Laboratorio + "	Nombre:" + Nombre + "	Comuna:" + Comuna;
+	return "\tID Laoratorio:" + ID_Laboratorio + "\tNombre:" + Nombre + "\tComuna:" + Comuna;
 }
 
 void cLaboratorio::imprimir_en_pantalla() {

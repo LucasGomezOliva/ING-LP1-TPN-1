@@ -52,21 +52,10 @@ bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
 
 void cCentro_de_Testeo::Mandar_Testeo() {
 
-	//Envía las muestras al Laboratorio asignado para determinar la presencia de COVID en el paciente.
-	/*
-	bool aux;
-	for (int i = 0; i < completo;i++) {
-		if (Array_Pacientes[i] != NULL) {
-			aux = Laboratorio->Recibir_Muestra(Array_Pacientes[i]);
-			if (aux = false) cout << "ERROR al recibir la muestra" << endl;
-		}
-	}
-	*/
 	for (int i = 0; i < completo; i++) {
 		if (Array_Pacientes[i] != NULL) {
 			Laboratorio->Recibir_Muestra(Array_Pacientes[i]);
 		}
-		
 	}
 }
 
@@ -83,7 +72,6 @@ void cCentro_de_Testeo::Baja_Paciente() {
 			Array_Pacientes[--completo] = NULL;
 		}
 	}
-
 }
 
 int cCentro_de_Testeo::getIndex(string _DNI) {
@@ -95,11 +83,8 @@ int cCentro_de_Testeo::getIndex(string _DNI) {
 }
 
 string cCentro_de_Testeo::to_string() {
-
-	return "	ID:" + ID + "	Nombre:" + Nombre + "	Comuna:" + Comuna;
+	return "\tID:" + ID + "\tNombre:" + Nombre + "\tComuna:" + Comuna;
 }
 void cCentro_de_Testeo::imprimir_en_pantalla() {
-
 	cout << to_string() << endl;
-
 }
