@@ -31,9 +31,7 @@ cLaboratorio::~cLaboratorio(){
 }
 
 bool cLaboratorio::Recibir_Muestra(cPaciente* _Paciente) {
-
 	//Recibe un paciente y se fija si tiene lugar para analizar la muestra. En el caso de que no se logre recibir la muestra indique el problema que se tuvo.
-
 	if (Completo == MAX_MUESTRAS_PACIENTES) { cout << "ERROR: Laboratorio alcanzo su maximo de capacidad de muestras." << endl; return false; }
 	int pos = getIndex(_Paciente->get_DNI());
 	if (pos >= 0) {

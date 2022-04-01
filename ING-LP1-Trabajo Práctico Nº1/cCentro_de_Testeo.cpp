@@ -26,9 +26,7 @@ cCentro_de_Testeo::cCentro_de_Testeo(string _ID, string _Comuna, string _Nombre)
 }
 
 cCentro_de_Testeo::~cCentro_de_Testeo() {
-	
 	if (Array_Pacientes != NULL) {
-		
 		delete[] Array_Pacientes;
 	}
 }
@@ -39,8 +37,7 @@ void cCentro_de_Testeo::Asociar_Laboratorio(cLaboratorio* _Laboratorio){
 }
 
 bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
-	//Recibe un paciente, verifica que haya un espacio para atenderlo y si lo hay se lo asigna a uno de los 2 punteros. Caso contrario, se imprime en pantalla el error que se tuvo.
-
+	//Recibe un paciente, verifica que haya un espacio para atenderlo y si lo hay se lo asigna al puntero. Caso contrario, se imprime en pantalla el error que se tuvo.
 	if (completo == MAX_PACIENTES) { cout << "ERROR: Centro de testeo alcanzo su maximo de capacidad." << endl; return false; }
 	int pos = getIndex(_Paciente->get_DNI());
 	if (pos >= 0) {
@@ -51,7 +48,7 @@ bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
 }
 
 void cCentro_de_Testeo::Mandar_Testeo() {
-
+	//Envía las muestras al Laboratorio asignado para determinar la presencia de COVID en el paciente.
 	for (int i = 0; i < completo; i++) {
 		if (Array_Pacientes[i] != NULL) {
 			Laboratorio->Recibir_Muestra(Array_Pacientes[i]);
@@ -60,9 +57,7 @@ void cCentro_de_Testeo::Mandar_Testeo() {
 }
 
 void cCentro_de_Testeo::Baja_Paciente() {
-
 	//Si el atributo “Resultado Testeo” de los pacientes es diferente a “Sin resultado”, se pueden poner en NULL los punteros a los pacientes.
-	
 	for (int i = 0; i < completo; i++) {
 		if (Array_Pacientes[i]->get_Resultado_Testeo() != Resultado_Testeo::SinResultado) {
 			Array_Pacientes[i] = NULL;
