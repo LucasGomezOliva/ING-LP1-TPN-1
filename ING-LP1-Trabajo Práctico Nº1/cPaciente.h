@@ -35,5 +35,6 @@ public:
 	void set_Resultado_Testeo(Resultado_Testeo resultado);
 	void set_Notificado(bool notificado) { this->Notificado = notificado; };
 	string to_string();
+	void imprimir_en_pantalla();
 };
 

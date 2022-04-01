@@ -17,9 +17,10 @@ public:
 	cLaboratorio(string _ID_Laboratorio,string _Nombre,string _Comuna);
 	~cLaboratorio();
 	bool Recibir_Muestra(cPaciente* _Paciente);
-	void Analisis_Muestra();//Testear el correcto funcionamiento
+	void Analisis_Muestra();
 	void Avisar_Pacientes();
 	int getIndex(string _DNI);
 	string to_string();
+	void imprimir_en_pantalla();
 };
 

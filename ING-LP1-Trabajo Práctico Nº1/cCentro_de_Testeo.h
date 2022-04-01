@@ -25,5 +25,7 @@ public:
 	void Mandar_Testeo();
 	void Baja_Paciente();
 	int getIndex(string _DNI);
+	string to_string();
+	void imprimir_en_pantalla();
 };
 

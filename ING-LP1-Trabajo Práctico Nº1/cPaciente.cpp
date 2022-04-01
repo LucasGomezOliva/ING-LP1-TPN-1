@@ -39,5 +39,9 @@ void cPaciente::set_Resultado_Testeo(Resultado_Testeo resultado)
 }
 
 string cPaciente::to_string() {
-	return "Nombre:" + Nombre + "	Apellido:" + Apellido + "	DNI:" + DNI + "	Telefono:" + Telefono; "	Fiebre: ";
+	return "	Nombre:" + Nombre + "	Apellido:" + Apellido + "	DNI:" + DNI + "	Telefono:" + Telefono; "	Fiebre: ";
+}
+
+void cPaciente::imprimir_en_pantalla() {
+	cout << to_string()<<endl;
 }

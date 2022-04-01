@@ -26,11 +26,9 @@ cCentro_de_Testeo::cCentro_de_Testeo(string _ID, string _Comuna, string _Nombre)
 }
 
 cCentro_de_Testeo::~cCentro_de_Testeo() {
+	
 	if (Array_Pacientes != NULL) {
-			for (int i = 0; i <= completo; i++) {
-				if (Array_Pacientes[i] != NULL)
-					delete Array_Pacientes[i];
-			}
+		
 		delete[] Array_Pacientes;
 	}
 }
@@ -49,9 +47,7 @@ bool cCentro_de_Testeo::Alta_Paciente(cPaciente* _Paciente) {
 		cout << "ERROR: El paciente ya habia sido dado de alta." << endl;
 		return false;
 	}
-	//Duda del correcto uso de punteros
 	this->Array_Pacientes[completo++] = _Paciente;
-	//this->Array_Pacientes[completo++] = new cPaciente(*_Paciente);
 }
 
 void cCentro_de_Testeo::Mandar_Testeo() {
@@ -96,4 +92,14 @@ int cCentro_de_Testeo::getIndex(string _DNI) {
 			return i;
 	}
 	return -1;
+}
+
+string cCentro_de_Testeo::to_string() {
+
+	return "	ID:" + ID + "	Nombre:" + Nombre + "	Comuna:" + Comuna;
+}
+void cCentro_de_Testeo::imprimir_en_pantalla() {
+
+	cout << to_string() << endl;
+
 }

@@ -26,12 +26,7 @@ cLaboratorio::cLaboratorio(string _ID_Laboratorio, string _Nombre, string _Comun
 
 cLaboratorio::~cLaboratorio(){
 	if (Array_Pacientes != NULL) {
-		for (int i = 0; i < Completo; i++) {
-			if (Array_Pacientes[i] != NULL)
-				//delete Array_Pacientes[i];
-				Array_Pacientes[i] = NULL;
-				delete Array_Pacientes[i];
-		}
+
 		delete[] Array_Pacientes;
 	}
 }
@@ -46,10 +41,7 @@ bool cLaboratorio::Recibir_Muestra(cPaciente* _Paciente) {
 		cout << "ERROR: Ya se habia recibido la muestra" << endl;
 		return false;
 	}
-
-	//Duda del correcto uso de punteros
 	this->Array_Pacientes[Completo++] = _Paciente;
-	//this->Array_Pacientes[Completo++] = new cPaciente(*_Paciente);
 }
 
 void cLaboratorio::Analisis_Muestra() {
@@ -81,10 +73,11 @@ void cLaboratorio::Analisis_Muestra() {
 
 void cLaboratorio::Avisar_Pacientes() {
 	// Manda un mensaje de texto al paciente con la información del testeo (imprimir en pantalla si se logró mandar el mensaje). Una vez que se avisa a los pacientes, se descartan las muestras.
-	for (int i = 0; i < Completo; i++) {
+	for (int i = 0; i <Completo; i++) {
 		if (Array_Pacientes != 0) {
 			Array_Pacientes[i]->set_Notificado(true);
-			cout << "El resultado fue enviado al paciente:  "<<Array_Pacientes[i]->to_string() << endl;
+			cout << "\nEl resultado fue enviado al paciente:  "<<Array_Pacientes[i]->to_string() << endl;
+			Array_Pacientes[i] = NULL;
 		}
 	}
 }
@@ -99,5 +92,9 @@ int cLaboratorio::getIndex(string _DNI) {
 }
 
 string cLaboratorio::to_string() {
-	return "ID Laoratorio:" + ID_Laboratorio + "	Nombre:" + Nombre + "	Comuna:" + Comuna;
+	return "	ID Laoratorio:" + ID_Laboratorio + "	Nombre:" + Nombre + "	Comuna:" + Comuna;
+}
+
+void cLaboratorio::imprimir_en_pantalla() {
+	cout << to_string() << endl;
 }
