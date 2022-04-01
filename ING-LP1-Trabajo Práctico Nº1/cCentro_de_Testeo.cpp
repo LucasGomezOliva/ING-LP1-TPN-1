@@ -65,11 +65,7 @@ void cCentro_de_Testeo::Baja_Paciente() {
 	
 	for (int i = 0; i < completo; i++) {
 		if (Array_Pacientes[i]->get_Resultado_Testeo() != Resultado_Testeo::SinResultado) {
-
-			for (int p = i; p < completo - 1; p++) {
-				Array_Pacientes[i] = Array_Pacientes[i + 1];
-			}
-			Array_Pacientes[--completo] = NULL;
+			Array_Pacientes[i] = NULL;
 		}
 	}
 }
